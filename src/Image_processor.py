@@ -72,7 +72,7 @@ nose_files = {
 
 ## Generate Traits
 
-TOTAL_IMAGES = 1000 # Number of random unique images we want to generate
+TOTAL_IMAGES = 1 # Number of random unique images we want to generate
 
 all_images = [] 
 
@@ -163,12 +163,12 @@ os.mkdir(f'./images')
 
 for item in all_images:
 
-    im1 = Image.open(f'./Pictures/Backgrounds/{Background_files[item["Background"]]}.png').convert('RGBA')
-    im2 = Image.open(f'./Pictures/Faces/{face_files[item["Face"]]}.png').convert('RGBA')
-    im3 = Image.open(f'./Pictures/Eyes/{eyes_files[item["Eyes"]]}.png').convert('RGBA')
-    im4 = Image.open(f'./Pictures/Shirts/{Shirt_files[item["Shirt"]]}.png').convert('RGBA')
-    im5 = Image.open(f'./Pictures/Mouths/{mouth_files[item["Mouth"]]}.png').convert('RGBA')
-    im6 = Image.open(f'./Pictures/Noses/{nose_files[item["Nose"]]}.png').convert('RGBA')
+    im1 = Image.open(f'../Pictures/Backgrounds/{Background_files[item["Background"]]}.png').convert('RGBA')
+    im2 = Image.open(f'../Pictures/Faces/{face_files[item["Face"]]}.png').convert('RGBA')
+    im3 = Image.open(f'../Pictures/Eyes/{eyes_files[item["Eyes"]]}.png').convert('RGBA')
+    im4 = Image.open(f'../Pictures/Shirts/{Shirt_files[item["Shirt"]]}.png').convert('RGBA')
+    im5 = Image.open(f'../Pictures/Mouths/{mouth_files[item["Mouth"]]}.png').convert('RGBA')
+    im6 = Image.open(f'../Pictures/Noses/{nose_files[item["Nose"]]}.png').convert('RGBA')
 
     #Create each composite
     com1 = Image.alpha_composite(im1, im2)

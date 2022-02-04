@@ -158,17 +158,17 @@ for image in all_images:
 #print(nose_count)
 
 #### Generate Images
-
-os.mkdir(f'./images')
+PathtoRepository= "/Skrivebord/bitbot/NFT_Generator"
+os.mkdir(f'.{PathtoRepository}/images')
 
 for item in all_images:
 
-    im1 = Image.open(f'../Pictures/Backgrounds/{Background_files[item["Background"]]}.png').convert('RGBA')
-    im2 = Image.open(f'../Pictures/Faces/{face_files[item["Face"]]}.png').convert('RGBA')
-    im3 = Image.open(f'../Pictures/Eyes/{eyes_files[item["Eyes"]]}.png').convert('RGBA')
-    im4 = Image.open(f'../Pictures/Shirts/{Shirt_files[item["Shirt"]]}.png').convert('RGBA')
-    im5 = Image.open(f'../Pictures/Mouths/{mouth_files[item["Mouth"]]}.png').convert('RGBA')
-    im6 = Image.open(f'../Pictures/Noses/{nose_files[item["Nose"]]}.png').convert('RGBA')
+    im1 = Image.open(f'.{PathtoRepository}/Pictures/Backgrounds/{Background_files[item["Background"]]}.png').convert('RGBA')
+    im2 = Image.open(f'.{PathtoRepository}/Pictures/Faces/{face_files[item["Face"]]}.png').convert('RGBA')
+    im3 = Image.open(f'.{PathtoRepository}/Pictures/Eyes/{eyes_files[item["Eyes"]]}.png').convert('RGBA')
+    im4 = Image.open(f'.{PathtoRepository}/Pictures/Shirts/{Shirt_files[item["Shirt"]]}.png').convert('RGBA')
+    im5 = Image.open(f'.{PathtoRepository}/Pictures/Mouths/{mouth_files[item["Mouth"]]}.png').convert('RGBA')
+    im6 = Image.open(f'.{PathtoRepository}/Pictures/Noses/{nose_files[item["Nose"]]}.png').convert('RGBA')
 
     #Create each composite
     com1 = Image.alpha_composite(im1, im2)
@@ -180,11 +180,11 @@ for item in all_images:
     #Convert to RGB
     rgb_im = com5.convert('RGB')
     file_name ="Kryptobjørn #" + str(item["tokenId"]) + ".png"
-    rgb_im.save("./images/" + file_name)
+    rgb_im.save(f".{PathtoRepository}/images/" + file_name)
     
  #### Generate Metadata for all Traits 
-os.mkdir(f'./metadata')
+os.mkdir(f'.{PathtoRepository}/metadata')
 
-METADATA_FILE_NAME = './metadata/all-traits.json'; 
+METADATA_FILE_NAME = f'.{PathtoRepository}/metadata/all-traits.json'; 
 with open(METADATA_FILE_NAME, 'w') as outfile:
     json.dump(all_images, outfile, indent=4)
